@@ -32,10 +32,17 @@ let crearTarea = (cDescripcion) => {
     return porHacer;
 }
 
-let obtenerTareas = () => {
+let obtenerTareas = (lCompletado) => {
     cargarDB();
+    let lstTareas = lstPorHacer;
 
-    return lstPorHacer;
+    if (lCompletado != undefined && lCompletado != null) {
+        lstTareas = lstPorHacer.filter(tarea => {
+            return tarea.lCompletado === lCompletado;
+        });
+    }
+
+    return lstTareas;
 }
 
 let actualizar = (cDescripcion, lCompletado = true) => {

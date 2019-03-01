@@ -10,7 +10,7 @@ switch (cComando) {
         console.log(tarea);
         break;
     case 'listar':
-        let lstTareas = porHacer.obtenerTareas();
+        let lstTareas = porHacer.obtenerTareas(argv.c);
         for (let tarea of lstTareas) {
             console.log('=========Por Hacer========='.green);
             console.log(tarea.cDescripcion);
